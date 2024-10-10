@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+
+:root{
+    --maincolor: #ffffff;
+    --subcolor: #a8dce7;
+    --othercolor: #101422;
+    --color2: #272b3b;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 1.15rem;
+}
+
+body{
+    background-color: var(--maincolor);
+}
+
+
+  @keyframes l2 {to{transform: rotate(1turn)}}
+/* navigation bar */
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--subcolor);
+}
+.nav .nav-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav .nav-heading img{
+    margin-right: 10px;
+    width: 50px;
+    clip-path: circle();
+    padding: 2px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.nav a{
+    text-decoration: none;
+    color: inherit;
+}
+.nav .nav-list{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.nav-list .list-item{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    padding: 5px;
+    border-radius: 6px;
+}
+.nav-list .list-item:hover{
+    transform: translateY(-5px);
+    border-bottom: 4px solid var(--othercolor);
+}
+.nav-list .list-item:active{
+    background-color: var(--othercolor);
+}
+
+.nav .login{
+    padding: 10px;
+    background-color: var(--maincolor);
+    color: var(--othercolor);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger-menu{
+    display: none;
+    cursor: pointer;
+}
+.hamburger{
+    display: none;
+    position: relative;
+    margin: 10px 20px;
+    background-color: var(--color2);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: 2s ease;
+    
+}
+.hamburger-list a{
+    text-decoration: none;
+    color: var(--subcolor);
+    cursor: pointer;
+}
+
+.hamburger-list a li{
+    list-style: none;
+    transition: 4s ease;
+}
+.hamburger-list li:hover{
+    border-bottom: 2px solid var(--maincolor);
+}
+/* section hero */
+.hero{
+    position: relative;
+    overflow: hidden;
+}
+
+.corousel{
+    position: relative;
+    overflow: hidden;
+}
+
+.item{
+    width: 100%;
+    position: relative;
+    display: none;
+}
+.active{
+    display: block;
+}
+.item img{
+    width: 100%;
+    height: 100%;
+}
+.item .content{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(to right, var(--color2) 75%, transparent);
+    opacity: 0.9;
+    gap: 20px;
+    padding-left: 50px;
+    animation: slideRight 2s ease;
+}
+.content h1, h2{
+    font-size: 3.5rem;
+    color: var(--subcolor);
+}
+.content p{
+    font-size: 1.2rem;
+    color: var(--maincolor);
+}
+.content button{
+    position: relative;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--subcolor);
+}
+
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.navigation button {
+    background: var(--maincolor);
+    color: var(--color2);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+.navigation button:hover{
+    background-color: var(--subcolor);
+}
+
+.btn::after{
+    content: "";
+    position: absolute;
+    background-color: var(--othercolor);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: inherit;
+    width: 0;
+    transition: all 0.5s ease;
+}
+.btn:hover::after{
+    width: 100%;
+}
+.btn:active::after{
+    opacity: 1;
+}
+.btn span{
+    position: relative;
+    z-index: 2;
+    color: var(--othercolor);
+}
+
+@keyframes slideRight{
+    from{
+        transform: translateX(-300%);
+    }
+}
+/* section about us */
+#aboutUs{
+    overflow: hidden;
+    position: relative;
+}
+#aboutUs .contain{
+    width: 100%;
+    position: relative;
+}
+.contain img{
+    width: 100%;
+}
+.contain .content{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 0;
+    margin-left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color2);
+    opacity: 0.9;
+}
+
+.contain .content .socials{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.contain .content .socials.animate{
+    animation: slideDown 3s ease;
+}
+.contain .about-head.animate, .about-para.animate{
+    animation: slideUp 3s ease;
+}
+.socials .fab{
+    font-size: 40px;
+}
+@keyframes slideDown{
+    from{
+        transform: translateY(300%);
+    }
+}
+@keyframes slideUp{
+    from{
+        transform: translateY(-300%);
+    }
+}
+
+/* section cideography */
+.videography{
+    overflow: hidden;
+    position: relative;
+}
+.videography .video-container{
+    width: 100%;
+    position: relative;
+}
+.video-container video{
+    width: 100%;
+}
+.video-container .content{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.9;
+    background-image: linear-gradient(to top, var(--othercolor)70%, transparent);
+}
+/* footer */
+
+footer {
+    background-color: var(--othercolor);
+    padding: 20px;
+    color: var(--maincolor);
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links li {
+    margin-right: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--subcolor);
+    transition: 0.5s ease;
+}
+
+.footer-links a:hover {
+    color: var(--maincolor);
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.socials i {
+    font-size: 24px;
+    transition: 0.5s ease;
+}
+
+.socials i:hover {
+    transform: scale(1.2);
+}
+
+
+/* responsive */
+
+@media (max-width: 850px) {
+    .hero, #aboutUs, .videography{
+        margin: 20px;
+    }
+
+    *{
+        font-size: 12px;
+        margin: 0;
+    }
+    .item .content{
+        width: 100%;
+        padding-right: 80px;
+        opacity: 0.6;
+        background-color: var(--color2);
+    }
+    .list-items{
+        display: none;
+    }
+    .hamburger-menu{
+        display: block;
+    }
+    .socials .fab{
+        font-size: 20px;
+    }
+    .nav .login{
+        padding: 5px;
+    }
+
+    .footer-content {
+        gap: 10px;
+    }
+    .footer-links {
+        flex-wrap: wrap;
+    }
+    .footer-links li {
+        margin-right: 10px;
+    }
+    .socials {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px){
+    .contain .content{
+        width: 100%;
+        margin: 0;
+        animation: slideRight 1s ease;
+        opacity: 0.7;
+    }
+    h2{
+        font-size: 2rem;
+    }
+    .item .content{
+        padding: 10px;
+    }
+    .item .content p{
+        font-size: 8px;
+    }
+    .item .content h1{
+        font-size: 15px;
+    }
+    .navigation button{
+        opacity: 0.5;
+    }
+
+    .footer-content {
+        gap: 5px;
+    }
+    .footer-links {
+        flex-direction: column;
+    }
+    .footer-links li {
+        margin-right: 0;
+    }
+    .socials {
+        gap: 5px;
+    }
+
+}
+
+/* loader */
+
+
+.loader-wrapper {
+    background: var(--color2);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+/* loader */
+.loader-wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+}
